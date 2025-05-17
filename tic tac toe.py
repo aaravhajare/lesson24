@@ -34,64 +34,63 @@ def game():
         if count >= 5:
         
             if board["7"] == board["8"] == board["9"] != " ":
-                print(board)
+                print_board(board)
                 print(turn , "wins")
                 break
 
             elif board["4"] == board["5"] == board["6"] != " ":
-               print(board)
+               print_board(board)
                print(turn , "wins")
                break
 
             elif board["1"] == board["2"] == board["3"] != " ":
-               print(board)
+               print_board(board)
                print(turn , "wins")
                break
 
             elif board["7"] == board["4"] == board["1"] != " ":
-               print(board)
+               print_board(board)
                print(turn , "wins")
                break
 
             elif board["8"] == board["5"] == board["2"] != " ":
-               print(board)
+               print_board(board)
                print(turn , "wins")
                break
 
             elif board["9"] == board["6"] == board["3"] != " ":
-               print(board)
+               print_board(board)
                print(turn , "wins")
                break
 
             elif board["7"] == board["5"] == board["3"] != " ":
-               print(board)
+               print_board(board)
                print(turn , "wins")
                break
 
             elif board["9"] == board["5"] == board["1"] != " ":
-               print(board)
+               print_board(board)
                print(turn , "wins")
                break
-        if count == 9:
-            print("it a tie")
-            break
+
 
         if turn == "X":
             turn = "O"
         else:
             turn = "X"
 
-        restart = input("do you want to restart the game? (yes/no)")
-        if restart == "yes":
-            for i in board_keys:
-                board[i] = " "
-            game()
+        if count == 9:
+            print("it a tie")
             
-        else:
-            print("thanks for playing")
-            break
+            restart = input("do you want to restart the game? (yes/no)")
+            if restart == "yes":
+                for i in board_keys:
+                    board[i] = " "
+                game()
 
-        game()
+            else:
+                print("thanks for playing")
+                break
 
 if __name__ == "__main__":
     game()
